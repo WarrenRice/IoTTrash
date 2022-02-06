@@ -1,6 +1,10 @@
 const reconnectTimeout = 2000;
-const host="test.mosquitto.org";
-const port=8081;
+// const host="test.mosquitto.org";
+// const port=8081;
+// const host="broker.hivemq.com";
+// const port=80;
+const host="broker.mqttdashboard.com";
+const port=8000;
 
 const mqtt = new Paho.MQTT.Client(host, port, "iotweb");
 
@@ -34,8 +38,16 @@ function onConnect() {
 }
 
 function onFailure() {
-    console.log("Connection to Host: " + host + "Failed");
+    console.log("Connection to Host: " + host + " Failed");
     setTimeout(MQTTreconnect, reconnectTimeout);
+    document.getElementById(`barTrashA/plastic`).setAttribute("style", `width: 15%;`)
+    document.getElementById(`barTrashA/metal`).setAttribute("style", `width: 10%;`)
+    document.getElementById(`barTrashA/paper`).setAttribute("style", `width: 20%;`)
+    document.getElementById(`barTrashA/others`).setAttribute("style", `width: 15%;`)
+    document.getElementById(`barTrashB/plastic`).setAttribute("style", `width: 10%;`)
+    document.getElementById(`barTrashB/metal`).setAttribute("style", `width: 15%;`)
+    document.getElementById(`barTrashB/paper`).setAttribute("style", `width: 10%;`)
+    document.getElementById(`barTrashB/others`).setAttribute("style", `width: 20%;`)    
 }
 
 function onMessageArrived(message) {
