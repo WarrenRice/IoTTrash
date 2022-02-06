@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background:rgb(254, 255, 188);
+}
+
+.warp {
+    display: flex; 
+    flex-wrap: wrap;
+
+}
+
+.card {
+    background-color: rgb(163, 203, 255);
+    width: 45%;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 10px;
+    
+}
+
+.card:hover {
+    box-shadow: 5px 5px 8px #888888;
+}
+
+.main-container {
+    display: flex;
+    width: 100%;
+    margin: 10px;
+}
+
+.image-container {
+    height: 100px;
+    width: 100px;
+}
+
+.img-icon {
+    height: 64px;
+    margin-top: 20px;
+}
+
+.body-container {
+    margin: 0px 10px;
+    width: 90%;
+}
+
+.text-container {
+    height: 50%;
+    display: flex;
+    justify-content:space-between;
+    margin: 0px 10px;
+}
+
+.bar-container {
+    height: 20px;
+    background-color: #CCC;
+    position: relative;
+    border-radius: 7px;
+    border-color: #000;
+    border-width: 3px;
+    border-style: solid;
+    margin: 5px;
+}
+
+.bar-container .progress-bar {
+    position:absolute;
+    height: 100%;
+    border-radius: 7px;
+    width: 0%;
+
+    background-color: rgb(76, 175, 114);
+    animation: progress-animation 5s forwards;
+}
+
+.title {
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(163, 203, 255);
+    border-radius: 20px;
+    margin: 40px auto;
+    padding: 5px;
+    box-shadow: 5px 5px 8px #888888;
+}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UTrashA/Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+
+    <link rel="stylesheet" href="index.css">
+
+    <script src="index.js"></script>
+    <title>ThinkDee Dashboard</title>
+</head>
+<body>
+
+  <div class="title">
+    <h2 style="margin: 0px 25px;">ThinkDee Dashboard</h2>
+  </div>
+
+  <div class="warp">
+    
+    <div class="card">
+
+      <div class="main-container">
+        <div class="image-container">
+          <img class="img-icon" src="img/plastic.png" alt="plasticIcon">
+        </div>
+        <div class="body-container">
+          <div class="text-container">
+            <h2>Plastic</h2>
+            <h2 id="textTrashA/plastic">Full</h2>
+          </div>
+          <div class="bar-container">
+            <div class="progress-bar" id="barTrashA/plastic"></div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="main-container">
+        <div class="image-container">
+          <img class="img-icon" src="img/metal.png" alt="metalIcon">        
+        </div>
+        <div class="body-container">
+          <div class="text-container">
+            <h2>Metal</h2>
+            <h2 id="textTrashA/metal">Full</h2>
+          </div>
+          <div class="bar-container">
+            <div class="progress-bar" id="barTrashA/metal"></div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="main-container">
+        <div class="image-container">
+          <img class="img-icon" src="img/paper.png" alt="paperIcon">         
+        </div>
+        <div class="body-container">
+          <div class="text-container">
+            <h2>Paper</h2>
+            <h2 id="textTrashA/paper">Full</h2>
+          </div>
+          <div class="bar-container">
+            <div class="progress-bar" id="barTrashA/paper"></div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="main-container">
+        <div class="image-container">
+          <img class="img-icon" src="img/others.png" alt="othersIcon">          
+        </div>
+        <div class="body-container">
+          <div class="text-container">
+            <h2>Others</h2>
+            <h2 id="textTrashA/others">Full</h2>
+          </div>
+          <div class="bar-container">
+            <div class="progress-bar" id="barTrashA/others"></div>
+          </div>
+        </div>
+      </div>
+  
+      <h2 style="text-align: center;">Location: Canteen 1</h2>
+    </div>
+  
+    <div class="card">
+  
+      <div class="main-container">
+        <div class="image-container">
+          <img class="img-icon" src="img/plastic.png" alt="plasticIcon">
+        </div>
+        <div class="body-container">
+          <div class="text-container">
+            <h2>Plastic</h2>
+            <h2 id="textTrashB/plastic">Full</h2>
+          </div>
+          <div class="bar-container">
+            <div class="progress-bar" id="barTrashB/plastic"></div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="main-container">
+        <div class="image-container">
+          <img class="img-icon" src="img/metal.png" alt="metalIcon">         
+        </div>
+        <div class="body-container">
+          <div class="text-container">
+            <h2>Metal</h2>
+            <h2 id="textTrashB/metal">Full</h2>
+          </div>
+          <div class="bar-container">
+            <div class="progress-bar" id="barTrashB/metal"></div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="main-container">
+        <div class="image-container">
+          <img class="img-icon" src="img/paper.png" alt="paperIcon">        
+        </div>
+        <div class="body-container">
+          <div class="text-container">
+            <h2>Paper</h2>
+            <h2 id="textTrashB/paper">Full</h2>
+          </div>
+          <div class="bar-container">
+            <div class="progress-bar" id="barTrashB/paper"></div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="main-container">
+        <div class="image-container">
+          <img class="img-icon" src="img/others.png" alt="othersIcon">                  
+        </div>
+        <div class="body-container">
+          <div class="text-container">
+            <h2>Others</h2>
+            <h2 id="textTrashB/others">Full</h2>
+          </div>
+          <div class="bar-container">
+            <div class="progress-bar" id="barTrashB/others"></div>
+          </div>
+        </div>
+      </div>
+  
+      <h2 style="text-align: center;">Location: Canteen 2</h2>
+    </div>
+<!--   
+    <div class="card">
+  
+      <div class="main-container">
+        <div class="image-container">
+          <img class="img-icon" src="img/plastic.png" alt="plasticIcon">
+        </div>
+        <div class="body-container">
+          <div class="text-container">
+            <h2>Plastic</h2>
+            <h2 id="textTrashC/plastic">Full</h2>
+          </div>
+          <div class="bar-container">
+            <div class="progress-bar" id="barTrashC/plastic"></div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="main-container">
+        <div class="image-container">
+          <img class="img-icon" src="img/metal.png" alt="metalIcon">         
+        </div>
+        <div class="body-container">
+          <div class="text-container">
+            <h2>Metal</h2>
+            <h2 id="textTrashC/metal">Full</h2>
+          </div>
+          <div class="bar-container">
+            <div class="progress-bar" id="barTrashC/metal"></div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="main-container">
+        <div class="image-container">
+          <img class="img-icon" src="img/paper.png" alt="paperIcon">        
+        </div>
+        <div class="body-container">
+          <div class="text-container">
+            <h2>Paper</h2>
+            <h2 id="textTrashC/paper">Full</h2>
+          </div>
+          <div class="bar-container">
+            <div class="progress-bar" id="barTrashC/paper"></div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="main-container">
+        <div class="image-container">
+          <img class="img-icon" src="img/others.png" alt="othersIcon">        
+        </div>
+        <div class="body-container">
+          <div class="text-container">
+            <h2>Others</h2>
+            <h2 id="textTrashC/others">Full</h2>
+          </div>
+          <div class="bar-container">
+            <div class="progress-bar" id="barTrashC/others"></div>
+          </div>
+        </div>
+      </div>
+  
+      <h2 style="text-align: center;">Location: Offline</h2>
+    </div>
+       -->
+  </div>
+
+
+</body>
+</html>
